@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>分享会</title>
+    <link rel="stylesheet" href="./index.css"/>
+    <script src="./utils/jquery.min.js"></script>
+    <script src="./utils/jquery.cookie.js"></script>
+</head>
+<body>
+    <style>
+        a{
+            display: block;
+            line-height: 30px;
+        }
+    </style>
+    <div>
+        <a href="./components/float/float.html">float浮动后，向上对齐处理</a>
+        <a href="./components/layout/layout.html">两栏布局，底部对齐处理</a>
+        <a href="./components/shadow/shadow.html">阴影使用background与opacity的区别</a>
+        <a href="./components/arrow/arrow.html">三角形样式</a>
+        <a href="./components/tree/knockoutjs-tree.html">knockoutjs-tree</a>
+    </div>
+    <script>
+        window.onload = function() {
+            $.cookie("lalala", "lalala", {expires: 7,})
+        }
+    </script>
+</body>
+</html>

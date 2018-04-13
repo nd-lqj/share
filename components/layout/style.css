@@ -1,0 +1,49 @@
+html, body{
+    height: 100%;
+    width: 100%;
+    border: none;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+/****两栏布局，底部对齐处理****/
+.layout-pager{
+    min-height: 100%;
+    height: 100%;
+    position: relative;
+    min-width: 1000px;
+}
+
+.layout-wrapper{
+    width: 1000px;
+    margin: 0 auto;
+    padding-top: 70px;
+    background: yellow;
+    overflow: hidden;
+}
+
+.layout-left{
+    padding-bottom: 9999px;
+    margin-bottom: -9999px;
+    width: 150px;
+    float: left;
+    background: #e7e7e7;
+}
+
+.layout-content{
+    padding-bottom: 9999px;
+    margin-bottom: -9999px;
+    width: 840px;
+    float: right;
+    background: #e7e7e7;
+}
+
+.menu{
+    min-height: 200px;
+    background: red;
+}
+.container{
+    min-height: 300px;
+    background: blue;
+}

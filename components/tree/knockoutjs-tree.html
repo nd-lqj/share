@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>使用knockout实现树组件</title>
+    <style>
+        ul,li {
+            list-style-type: none;
+        }
+
+        .tree-node {
+            width: 100%;
+            position: relative;
+        }
+
+        .tree-node .node-toggle {
+            position: absolute;
+            left: 0;
+            top: 0;
+            cursor: pointer;
+        }
+
+        .tree-node .node-name {
+            padding-left: 20px;
+        }
+
+        .tree-node .node-children{
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <ul class="" data-bind="template: { name: 'nodeTemplate', foreach: nodes}"></ul>
+    </div>
+    
+    <script type="text/html" id="nodeTemplate">
+        <li class="tree-node">
+            <div class="node-toggle" data-bind="text: isOpen() ? '-' : '+', click: $root.toggle.bind($root, $data)"></div>
+            <div class="node-name" data-bind="text: name || ' '"></div>
+            <!--ko if: isOpen-->
+            <ul class="node-children" data-bind="template: {name: 'nodeTemplate', foreach: children}"></ul>
+            <!--/ko-->
+        </li>
+    </script>
+    <script src="./knockout-3.4.2.js"></script>
+    <script>
+        window.onload = function() {
+            var myViewModel = {
+                nodes: [{
+                    name: '父层1',
+                    children: [{
+                        name: '孩子1'
+                    }, {
+                        name: '孩子1'
+                    }]
+                }, {
+                    name: '父层2',
+                    children: [{
+                        name: '孩子3'
+                    }, {
+                        name: '孩子4',
+                        children: [{
+                            name: '孙子1'
+                        }, {
+                            name: '孙子1'
+                        }]
+                    }]
+                }],
+                toggle: function(node) { // 节点展开与关闭
+                    node.isOpen(!node.isOpen())
+                }
+            };
+            var setObservable = function (nodes) {
+                for(let i=0; i< nodes.length; i++) {
+                    let temp = nodes[i];
+                    temp.isOpen = ko.observable(false); // 节点展开与关闭(是否显示孩子节点)
+                    temp.children = ko.observableArray(temp.children ? temp.children : []); // 非叶子节点的子节点
+                    setObservable(temp.children());
+                }
+            }
+            setObservable(myViewModel.nodes);
+            ko.applyBindings(myViewModel, document.getElementById('app'));
+        }
+    </script>
+</body>
+</html>

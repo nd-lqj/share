@@ -1,0 +1,26 @@
+html, body{
+    height: 100%;
+    width: 100%;
+    border: none;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+/****浮动向上齐处理****/
+.float-parent {
+    height: 100%;
+    width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.float-child {
+    float: left;
+    text-align: center;
+    width: 25%;
+}
+.break-line{
+    height: 0;
+    width: 100%;
+    float: left;
+}

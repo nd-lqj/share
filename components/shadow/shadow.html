@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>阴影</title>
+    <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+    <div style="width: 200px; float: left;">
+        <div>弹窗父层上添加阴影：</div>
+        <button onclick="showDialog1('background')">阴影background</button>
+        <button onclick="showDialog1('opacity')">阴影opacity</button>
+    </div>
+
+    <div style="width: 200px; float: left;">
+        <div>弹窗同级DOM元素上添加阴影：</div>
+        <button onclick="showDialog2('background')">阴影background</button>
+        <button onclick="showDialog2('opacity')">阴影opacity</button>
+    </div>
+    <div id="dialog1" class="dialog-wrapper" style="display:none;">
+        <div class="dialog-content">
+            弹窗内容
+            <i class="dialog-close" onclick="closeDialog(1)">X</i>
+        </div>
+    </div>
+    <div id="dialog2" class="dialog-wrapper" style="display:none;">
+        <div id="shadowElement"></div>
+        <div class="dialog-content">
+            弹窗内容
+            <i class="dialog-close" onclick="closeDialog(2)">X</i>
+        </div>
+    </div>
+    <script>
+        function closeDialog(index) {
+            document.getElementById("dialog" + index).style.display="none"   
+        }
+        function showDialog1(shadow) {
+            document.getElementById("dialog1").setAttribute("class", 'dialog-wrapper ' + shadow); 
+            document.getElementById("dialog1").style.display="block"
+        }
+        function showDialog2(shadow) {
+            document.getElementById("shadowElement").setAttribute("class", 'dialog-bg ' + shadow); 
+            document.getElementById("dialog2").style.display="block"
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+html, body{
+    height: 100%;
+    width: 100%;
+    border: none;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+/****三角形***************/
+.arrow {
+    width:0px;
+    height:0px;
+    font-size:0px;
+    line-height:0px;
+}
+
+.up{
+    border-left:50px solid transparent;  /* left arrow slant */
+    border-right:50px solid transparent; /* right arrow slant */
+    border-bottom:50px solid #2f2f2f; /* bottom, add background color here */
+}
+
+.down{
+    border-left:50px solid transparent;  /* left arrow slant */
+    border-right:50px solid transparent; /* right arrow slant */
+    border-top:50px solid #2f2f2f; /* bottom, add background color here */
+}
+
+.left{
+    border-top:50px solid transparent;  /* left arrow slant */
+    border-bottom:50px solid transparent; /* right arrow slant */
+    border-right:50px solid #2f2f2f; /* bottom, add background color here */
+}
+
+.right{
+    border-bottom:50px solid transparent;  /* left arrow slant */
+    border-top:50px solid transparent; /* right arrow slant */
+    border-left:50px solid #2f2f2f; /* bottom, add background color here */
+}

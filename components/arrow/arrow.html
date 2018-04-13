@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>浮动，向上对齐</title>
+    <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+    <div style="float:left;padding: 50px 100px;">
+        <div class="arrow up" style="margin-bottom: 10px"></div>
+        <div class="arrow down" style="margin-bottom: 10px"></div>
+        <div class="arrow left" style="margin-bottom: 10px"></div>
+        <div class="arrow right" style="margin-bottom: 10px"></div>
+    </div>
+    <div style="float:left;padding: 50px 100px;">
+        <div style="position: relative;height: 60px;">
+            <div class="arrow up" style="position: absolute;top: 0;left: 0;"></div>
+            <div class="arrow up" style="position: absolute; top: 10px;left: 0;border-bottom-color: #fff;"></div>
+        </div>
+        <div style="position: relative;height: 60px;">
+            <div class="arrow down" style="position: absolute;top: 0;left: 0;"></div>
+            <div class="arrow down" style="position: absolute;top: -10px;left: 0;border-top-color: #fff;"></div>
+        </div>
+        <div style="position: relative;height: 110px;">
+            <div class="arrow left" style="position: absolute;top: 0;left: 0;"></div>
+            <div class="arrow left" style="position: absolute;top: 0;left: 10px;border-right-color: #fff;"></div>
+        </div>
+        <div style="position: relative;height: 110px;">
+            <div class="arrow right" style="position: absolute;top: 0;left: 0;"></div>
+            <div class="arrow right" style="position: absolute;top: 0;left: -10px;border-left-color: #fff;"></div>
+        </div>
+    </div>
+</body>
+</html>
