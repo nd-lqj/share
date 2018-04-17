@@ -1,0 +1,25 @@
+.app {
+  height: 200px;
+  width: 500px;
+  border: 1px solid #e1e;
+  margin: 0 auto;
+  position: relative;
+}
+.word-bg{
+  position: absolute;
+  background: aqua;
+  display: block;
+  z-index: -20;
+  border: 5px solid red;
+}
+.span-style{
+  background-color: aqua;
+  border: 5px solid red;
+  margin: 0 -5px;
+  z-index: -50;
+  position: relative;
+}
+.word-info{
+  width: 200px;
+  margin: 0 auto;
+}
