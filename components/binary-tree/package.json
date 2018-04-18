@@ -1,3 +1,5 @@
+
+
 {
   "name": "binary-tree",
   "version": "0.1.0",
@@ -9,7 +11,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "---------": "-编译完后，需要手动把绝对路径改成相对路径。----------",
+    "build": "react-scripts build", 
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
