@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>前端学习总结</title>
+    <script src="./knockout-3.4.2.js"></script>
+    <script>
+            window.onload = function() {
+                var myViewModel = {
+                    list: [{
+                        title: '跨域', isActived: ko.observable(false),
+                        text: [""]
+                    }, {
+                        title: '缓存', isActived: ko.observable(false),
+                        text: ["缓存存储策略", "缓存过期策略", "缓存对比策略"]
+                    }, {
+                        title: 'http2.0', isActived: ko.observable(false),
+                        text: []
+                    }, {
+                        title: '原型继承', isActived: ko.observable(false),
+                        text: []
+                    }, {
+                        title: 'knockout, angular, react, vue异同点', isActived: ko.observable(false),
+                        text: []
+                    }, {
+                        title: 'knockout原理', isActived: ko.observable(false),
+                        text: []
+                    }, {
+                        title: 'angular原理', isActived: ko.observable(false),
+                        text: []
+                    }, {
+                        title: 'react原理', isActived: ko.observable(false),
+                        text: []
+                    }, {
+                        title: 'vue原理', isActived: ko.observable(false),
+                        text: []
+                    }, {
+                        title: '', isActived: ko.observable(false),
+                        text: []
+                    }, {
+                        title: '', isActived: ko.observable(false),
+                        text: []
+                    }],
+                    toggle: function(node) { // 节点展开与关闭
+                        node.isActived(!node.isActived())
+                    }
+                }
+                ko.applyBindings(myViewModel, document.getElementById('app'));
+            }
+    </script>
+</head>
+<body>
+    <div id="app">
+        <!--ko foreach: list-->
+            <h4 data-bind="click: $root.toggle.bind($root, $data), text: title"></h4>
+            <!--ko if: isActived-->
+                <!--ko foreach: text-->
+                    <p data-bind="text: $data"></p>
+                <!--/ko-->
+            <!--/ko-->
+        <!--/ko-->
+    </div>
+</body>
+</html>
