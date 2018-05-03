@@ -11,37 +11,47 @@
             window.onload = function() {
                 var myViewModel = {
                     list: [{
-                        title: '跨域', isActived: ko.observable(false),
+                        title: '跨域', isActived: ko.observable(true),
                         text: [""]
                     }, {
-                        title: '缓存', isActived: ko.observable(false),
-                        text: ["缓存存储策略", "缓存过期策略", "缓存对比策略"]
+                        title: '缓存', isActived: ko.observable(true),
+                        text: [
+                            "缓存存储策略：Cache-Control(Public、Private、no-cache、max-age 、no-store)",
+                            "缓存过期策略：Expires",
+                            "缓存对比策略：Last-Modified、ETags、If-Modified-Since、If-None-Match"
+                        ]
                     }, {
-                        title: 'http2.0', isActived: ko.observable(false),
+                        title: 'http2.0', isActived: ko.observable(true),
                         text: []
                     }, {
-                        title: '原型继承', isActived: ko.observable(false),
+                        title: '原型继承', isActived: ko.observable(true),
                         text: []
                     }, {
-                        title: 'knockout, angular, react, vue异同点', isActived: ko.observable(false),
+                        title: 'knockout, angular, react, vue异同点', isActived: ko.observable(true),
                         text: []
                     }, {
-                        title: 'knockout原理', isActived: ko.observable(false),
+                        title: 'knockout原理', isActived: ko.observable(true),
                         text: []
                     }, {
-                        title: 'angular原理', isActived: ko.observable(false),
+                        title: 'angular原理', isActived: ko.observable(true),
                         text: []
                     }, {
-                        title: 'react原理', isActived: ko.observable(false),
+                        title: 'react原理', isActived: ko.observable(true),
+                        text: [
+                            '虚拟dom对象(Virtual DOM)',
+                            '虚拟dom差异化算法（diff algorithm）',
+                            '单向数据流渲染（Data Flow）',
+                            '组件生命周期',
+                            '事件处理'
+                        ]
+                    }, {
+                        title: 'vue原理', isActived: ko.observable(true),
                         text: []
                     }, {
-                        title: 'vue原理', isActived: ko.observable(false),
+                        title: '', isActived: ko.observable(true),
                         text: []
                     }, {
-                        title: '', isActived: ko.observable(false),
-                        text: []
-                    }, {
-                        title: '', isActived: ko.observable(false),
+                        title: '', isActived: ko.observable(true),
                         text: []
                     }],
                     toggle: function(node) { // 节点展开与关闭
