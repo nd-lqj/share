@@ -48,11 +48,21 @@
                         title: 'vue原理', isActived: ko.observable(true),
                         text: []
                     }, {
-                        title: '', isActived: ko.observable(true),
+                        title: 'HTML5--新增的标签、属性和事件', isActived: ko.observable(true),
                         text: []
                     }, {
-                        title: '', isActived: ko.observable(true),
-                        text: []
+                        title: '前端工程化', isActived: ko.observable(true),
+                        text: [
+                            '前端工程化是根据业务特点，将前端开发流程规范化，标准化，它包括了开发流程，技术选型，代码规范，构建发布等，用于提升前端工程师的开发效率和代码质量'
+                        ]
+                    }, {
+                        title: '静态资源优化方案', isActived: ko.observable(true),
+                        text: [
+                            '配置超长时间的本地缓存 —— 节省带宽，提高性能',
+                            '采用内容摘要作为缓存更新依据 —— 精确的缓存控制',
+                            '静态资源CDN部署 —— 优化网络请求',
+                            '更新资源发布路径实现非覆盖式发布 —— 平滑升级'
+                        ]
                     }],
                     toggle: function(node) { // 节点展开与关闭
                         node.isActived(!node.isActived())
