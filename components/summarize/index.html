@@ -63,6 +63,18 @@
                             '静态资源CDN部署 —— 优化网络请求',
                             '更新资源发布路径实现非覆盖式发布 —— 平滑升级'
                         ]
+                    }, {
+                        title: 'React与数据流的关系', isActived: ko.observable(true),
+                        text: ['React是纯V的框架，只负责视图，把视图做成了组件化，不涉及任何的数据和控制，需要数据流进行支撑才能完成一个完整的前端项目。']
+                    }, {
+                        title: 'React diff 策略', isActived: ko.observable(true),
+                        text: [
+'Web UI 中 DOM 节点跨层级的移动操作特别少，可以忽略不计。',
+'拥有相同类的两个组件将会生成相似的树形结构，拥有不同类的两个组件将会生成不同的树形结构。',
+'对于同一层级的一组子节点，它们可以通过唯一 id 进行区分。',
+'tree diff: React 对树的算法进行了简洁明了的优化，即对树进行分层比较，两棵树只会对同一层次的节点进行比较。既然 DOM 节点跨层级的移动操作少到可以忽略不计，针对这一现象，React 通过 updateDepth 对 Virtual DOM 树进行层级控制，只会对相同颜色方框内的 DOM 节点进行比较，即同一个父节点下的所有子节点。当发现节点已经不存在，则该节点及其子节点会被完全删除掉，不会用于进一步的比较。这样只需要对树进行一次遍历，便能完成整个 DOM 树的比较。',
+'component diff: 如果是同一类型的组件，按照原策略继续比较 virtual DOM tree。如果不是，则将该组件判断为 dirty component，从而替换整个组件下的所有子节点。对于同一类型的组件，有可能其 Virtual DOM 没有任何变化，如果能够确切的知道这点那可以节省大量的 diff 运算时间，因此 React 允许用户通过 shouldComponentUpdate() 来判断该组件是否需要进行 diff。',
+'element diff: 当节点处于同一层级时，React diff 提供了三种节点操作，分别为：INSERT_MARKUP（插入）、MOVE_EXISTING（移动）和 REMOVE_NODE（删除）']
                     }],
                     toggle: function(node) { // 节点展开与关闭
                         node.isActived(!node.isActived())
