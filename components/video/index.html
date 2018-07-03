@@ -5,30 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="renderer" content="webkit">
-    <title>视频播放器</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/6.7.3/video-js.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/6.7.3/video.js"></script>
-    <script>window.HELP_IMPROVE_VIDEOJS = false;</script>
-    <script type="text/javascript" src="swfobject.js"></script>
+    <title>flowplayer视频播放器</title>
+    <link rel="stylesheet" href="./flowplayer-7.2.6/skin/skin.css">
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="./flowplayer-7.2.6/flowplayer.js"></script>
 </head>
 <body>
   <video preload="auto" loop autoplay src="https://www.w3cschool.cn/statics/demosource/movie.mp4">
     Your browser does not support the video tag.
   </video>
-  <video preload="auto" loop autoplay src="demo2.mp4">
+  <video preload="auto" loop autoplay src="demo2.mp4" style="width:520px; height:330px">
     Your browser does not support the video tag.
   </video>
-  <div id="my-target-element" style="height: 300px;width: 400px;background: red;"></div>
-  <script>
-    var el = document.getElementById("my-target-element");
-    var v = swfobject.embedSWF("myContent.swf", el, 300, 120, 10);
-    v.addParam("allowfullscreen", "true");       //可以让视频撑满限定的宽度和高度*
-    v.addParam("wmode", "transparent");      //可以将视频设置不为最高层，其他层可以覆盖住视频*
-    v.addVariable('volume', '40');
-    v.addVariable("autostart", 'true');
-    v.addVariable("overstretch", "true");
-    v.addVariable("file", "demo.mp4");//视频路径
-    v.write("a1");
-  </script>
+  <div class="flowplayer" data-swf="flowplayer-7.2.6/flowplayer.swf" loop="true" style="width:520px; height:330px">
+    <video autoplay="true" loop="true">
+      <source type="video/mp4" loop="true" src="demo2.mp4">
+    </video>
+  </div>
 </body>
 </html>
